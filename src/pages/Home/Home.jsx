@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux'
+import Task from '../../components/Task/Task';
 
-function Home() {
+const Home = () => {
+  const tasks = useSelector(state => state.tasks);
+  
   return (
-    <div>
-      Home
+    <div className='flex flex-wrap'>
+    {tasks.map((task) => (
+        <Task {...task}/>
+    ))}
     </div>
-  )
-}
+    
+  );
+};
 
-export default Home
+export default Home;
