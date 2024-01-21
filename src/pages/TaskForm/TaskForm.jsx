@@ -71,21 +71,6 @@ const TaskForm = ({task}) => {
             required
           />
         </div>
-        {/*
-        <div className="mb-4">
-          <input
-            type="checkbox"
-            id="completed"
-            name="completed"
-            checked={completed}
-            onChange={() => setCompleted(!completed)}
-            className="mr-2 leading-tight"
-          />
-          <label htmlFor="completed" className="text-gray-700 font-bold">
-            Completed
-          </label>
-        </div>
-       */} 
         <div>
           <button
             type="submit"
