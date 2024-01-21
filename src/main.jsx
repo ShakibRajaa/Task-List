@@ -7,12 +7,15 @@ import './index.css'
 import { store } from './app/store.js'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import Edit from './pages/Edit/Edit.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route path='' element={<Home />} />
       <Route path='form' element={<TaskForm />} />
+      <Route path='edit/:taskid' element={<Edit />} />
+
     </Route>
   )
 )

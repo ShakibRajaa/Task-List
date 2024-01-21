@@ -14,7 +14,10 @@ function Task({id,title,description,dueDate,completed}) {
     completed = !completed;
     dispatch(taskStatus(id))
     console.log(completed)
-
+  }
+  const onEdit = (id) =>
+  {
+    navigate(`edit/${id}`)
   }
   return (
       <div className="max-w-md mx-10 bg-white p-6 my-4 rounded-lg shadow-md">

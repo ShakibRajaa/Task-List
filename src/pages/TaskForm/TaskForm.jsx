@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
-import { addTask } from '../../features/taskSlice';
+import { addTask , updateTask } from '../../features/taskSlice';
 import {useDispatch } from 'react-redux';
 import Home from '../Home/Home';
 import { useNavigate } from 'react-router-dom';
 
-const TaskForm = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [dueDate, setDueDate] = useState('');
+const TaskForm = ({task}) => {
+  const [title, setTitle] = useState(task ? task.title:' ');
+  const [description, setDescription] = useState(task ? task.description:' ');
+  const [dueDate, setDueDate] = useState(task ? task.dueDate:' ');
   const [completed, setCompleted] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const today = new Date().toISOString().split('T')[0]
-
+  const id = task ? task.id : 0;
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTask({ title, description, dueDate, completed }))
+    task ? dispatch(updateTask({id,title,description,dueDate})) : dispatch(addTask({ title, description, dueDate, completed }))
     console.log('Task submitted:', { title, description, dueDate, completed });
     navigate('/');
   };
