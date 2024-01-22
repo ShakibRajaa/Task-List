@@ -20,7 +20,7 @@ function Task({id,title,description,dueDate,completed}) {
     navigate(`edit/${id}`)
   }
   return (
-      <div className="max-w-md mx-10 bg-white p-6 my-4 rounded-lg shadow-md">
+      <div className="max-w-md mx-5 bg-white p-6 my-4 rounded-lg shadow-md">
       
       <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
 

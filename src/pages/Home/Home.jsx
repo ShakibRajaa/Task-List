@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux'
 import Task from '../../components/Task/Task';
+import { useEffect } from 'react';
 
 const Home = () => {
-  const tasks = useSelector(state => state.tasks);
-  
+  let tasks = useSelector(state => state.tasks)
+
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap justify-center'>
     {tasks.map((task) => (
         <Task {...task}/>
     ))}
